@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { TeaRoundPickerStage } from './CurrentStage';
-import CreateUser from './CreateUser';
+import CreateUser from './Functions/CreateUser';
 
 type Props = { setStage: React.Dispatch<React.SetStateAction<TeaRoundPickerStage>> }
 
