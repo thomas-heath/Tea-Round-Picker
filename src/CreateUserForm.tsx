@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { TeaRoundPickerStage } from './CurrentStage';
+import CreateUser from './CreateUser';
 
 type Props = { setStage: React.Dispatch<React.SetStateAction<TeaRoundPickerStage>> }
 
@@ -9,9 +10,15 @@ export default function CreateUserForm({ setStage }: Props) {
         lastName: '',
     });
 
+    const handleSubmit = async (event : React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault()
+        await CreateUser(form.firstName, form.lastName)
+        setStage('AddDrink')
+    }
+
     return (
         <>
-            <form onSubmit={() => setStage('AddDrink')}>
+            <form onSubmit={handleSubmit}>
                 <label>
                     First Name:
                     <input
