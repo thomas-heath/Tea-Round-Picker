@@ -1,0 +1,6 @@
+@Tea_Round_Picker_HostAddress = http://localhost:5099
+
+GET {{Tea_Round_Picker_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

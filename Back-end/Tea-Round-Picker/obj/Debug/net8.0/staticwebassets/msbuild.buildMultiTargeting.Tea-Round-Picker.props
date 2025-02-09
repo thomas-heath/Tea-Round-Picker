@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/Tea-Round-Picker.props" />
+</Project>
