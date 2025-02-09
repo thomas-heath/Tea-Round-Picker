@@ -2,17 +2,21 @@ import { useState } from 'react';
 import { TeaRoundPickerStage } from './CurrentStage';
 import CreateUser from './Functions/CreateUser';
 
-type Props = { setStage: React.Dispatch<React.SetStateAction<TeaRoundPickerStage>> }
+type Props = {
+    setStage: React.Dispatch<React.SetStateAction<TeaRoundPickerStage>>,
+    setUserId: React.Dispatch<React.SetStateAction<string>>
+}
 
-export default function CreateUserForm({ setStage }: Props) {
+export default function CreateUserForm({ setStage, setUserId }: Props) {
     const [form, setForm] = useState({
         firstName: '',
         lastName: '',
     });
 
-    const handleSubmit = async (event : React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        await CreateUser(form.firstName, form.lastName)
+        const userId = await CreateUser(form.firstName, form.lastName)
+        setUserId(userId)
         setStage('AddDrink')
     }
 
