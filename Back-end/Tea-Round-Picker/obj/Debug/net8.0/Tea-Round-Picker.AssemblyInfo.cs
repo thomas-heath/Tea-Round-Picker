@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Tea-Round-Picker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c37723ffd9ebed0a9865c96a588448729c33c009")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+705d843604a186d62100dc5ab6565eff4f570ebd")]
 [assembly: System.Reflection.AssemblyProductAttribute("Tea-Round-Picker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Tea-Round-Picker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

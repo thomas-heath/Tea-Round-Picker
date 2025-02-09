@@ -6,48 +6,48 @@ namespace Tea_Round_Picker.Controllers
 {
     [ApiController]
     [Route("v1/[controller]")]
-    public class DrinkOrderController : ControllerBase
+    public class DrinkRunController : ControllerBase
     {
         private readonly TeaRoundPickerContext _context;
 
-        public DrinkOrderController(TeaRoundPickerContext context)
+        public DrinkRunController(TeaRoundPickerContext context)
         {
             _context = context;
         }
 
-        // GET: api/DrinkOrder
+        // GET: api/DrinkRun
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<DrinkOrder>>> GetDrinkOrders()
+        public async Task<ActionResult<IEnumerable<DrinkRun>>> GetDrinkRun()
         {
-            return await _context.DrinkOrders.ToListAsync();
+            return await _context.DrinkRun.ToListAsync();
         }
 
-        // GET: api/DrinkOrder/{id}
+        // GET: api/DrinkRun/{id}
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<DrinkOrder>> GetDrinkOrder(Guid id)
+        public async Task<ActionResult<DrinkRun>> GetDrinkRun(Guid id)
         {
-            var drinkOrder = await _context.DrinkOrders.FindAsync(id);
+            var drinkRun = await _context.DrinkRun.FindAsync(id);
 
-            if (drinkOrder == null)
+            if (drinkRun == null)
             {
                 return NotFound();
             }
 
-            return drinkOrder;
+            return drinkRun;
         }
 
-        // POST: api/DrinkOrder
+        // POST: api/DrinkRun
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public async Task<ActionResult<DrinkOrder>> PostDrinkOrder(DrinkOrder drinkOrder)
+        public async Task<ActionResult<DrinkRun>> PostDrinkRun(DrinkRun drinkRun)
         {
-            _context.DrinkOrders.Add(drinkOrder);
+            _context.DrinkRun.Add(drinkRun);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetDrinkOrder", new { id = drinkOrder.Id }, drinkOrder);
+            return CreatedAtAction("GetDrinkRun", new { id = drinkRun.Id }, drinkRun);
         }
     }
 }
